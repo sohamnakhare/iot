@@ -52,4 +52,9 @@ export default (app) => {
   } else {
     console.warn(unsupportedMessage('topics routes'));
   }
+  
+  //openshift readiness and liveness probe
+  app.get('/pagecount', function(req, res){
+    return res.status(200).send('201');
+  });
 };
